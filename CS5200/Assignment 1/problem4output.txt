@@ -1,0 +1,9 @@
+The result of f35q(-1) was: Error
+The result of f35q(0) was: Error
+The result of f35q(7) was: Error
+The result of f35q(8) was: (1, 1)
+The result of f35q(9) was: (3, 0)
+The result of f35q(10) was: (0, 2)
+The result of f35q(11) was: (2, 1)
+The result of f35q(12) was: (4, 0)
+The result of f35q(1000003) was: (1, 200000)

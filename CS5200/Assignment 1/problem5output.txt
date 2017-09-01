@@ -1,0 +1,4 @@
+The result of myFunction(1) was: 91
+The result of myFunction(-6) was: 91
+The result of myFunction(200) was: 190
+The result of myFunction(27) was: 91

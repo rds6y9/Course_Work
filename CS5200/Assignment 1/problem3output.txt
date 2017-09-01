@@ -1,0 +1,4 @@
+The result of altDif([]) was: []
+The result of altDif([1]) was: 1
+The result of altDif([3, 5, 4]) was: 2
+The result of altDif([1, 2, 3, 4, 5, 6, 7, 8]) was: -4
