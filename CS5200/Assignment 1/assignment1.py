@@ -1,10 +1,10 @@
 ##########################################################
-# PROGRAMMER: Ryan Stoughton				 			 #
-# PROFESSOR:  Dr. Markowsky                   			 #
-# CLASS: 	  CS5200 - Analysis of Algorithms			 #
-# FILE: 	  assignment1.py				 			 # 
-# NOTE: 	  This file can be executed via command line #
-#			  in order to rewrite output files.			 #
+# PROGRAMMER: Ryan Stoughton				 			 
+# PROFESSOR:  Dr. Markowsky                   			 
+# CLASS: 	  CS5200 - Analysis of Algorithms			 
+# FILE: 	  assignment1.py				 			 
+# NOTE: 	  This file can be executed via command line 
+#			  in order to rewrite output files.			 
 ##########################################################
 
 from time import time
