@@ -1,0 +1,6 @@
+
+The resulting list and iterations from OPR([0, 0, 0, 0, 0]) is: ([0, 0, 0, 0, 0], 0)
+Calculation unsuccessful after 996 iterations.
+The resulting list and iterations from OPR([1, 2, -3, -4, 5]) is: ([0, 0, 0, 0, 1], 27)
+The resulting list and iterations from OPR([-10, 3, 5, -4, 7]) is: ([0, 0, 0, 0, 1], 45)
+Calculation unsuccessful after 996 iterations.
