@@ -45,3 +45,9 @@ coverage.xml
 # Django stuff:
 *.log
 *.pot
+
+# Virtual Envs
+*/DataScienceEnv/*
+
+# VS Code Files
+*.vscode
