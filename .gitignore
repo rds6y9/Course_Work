@@ -23,7 +23,6 @@ var/
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
-
 # Unit test / coverage reports
 .tox/
 .coverage
@@ -51,3 +50,6 @@ coverage.xml
 
 # VS Code Files
 *.vscode
+
+# Java Code
+*.class
