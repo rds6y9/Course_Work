@@ -5,11 +5,11 @@ Created on Tue Sep  4 21:40:59 2018
 @author: Ryan Stoughton
 @assignment: Homework 1 Problem 3
 @course: CS5204 Data Mining w/ Dr. Fu
+
+All code was run in the Spyder IDE
 """
 
 from collections import Counter
-from scipy.stats import linregress
-from scipy.stats.stats import pearsonr 
 
 import matplotlib.pyplot as plt
 import numpy
@@ -172,3 +172,121 @@ print("Age / Pclass / Survived Graphs")
 relevant_data = train_df[['Age', 'Pclass', 'Survived']]
 relevant_data = relevant_data.dropna(how='any', axis=0)
 
+age_surv_pclass1 = relevant_data[relevant_data['Survived'] == 1]
+age_surv_pclass1 = age_surv_pclass1[age_surv_pclass1['Pclass'] == 1].get('Age')
+
+n, bins, patches = plt.hist(age_surv_pclass1, 20, density=True)
+
+plt.title("Pclass = 1 | Survived = 1")
+plt.xlabel("Age")
+plt.ylabel("Number Survived")
+
+age_surv_pclass1.hist(bins=20)
+plt.show()
+
+age_nosurv_pclass1 = relevant_data[relevant_data['Survived'] == 0]
+age_nosurv_pclass1 = age_nosurv_pclass1[age_nosurv_pclass1['Pclass'] == 1].get('Age')
+
+n, bins, patches = plt.hist(age_nosurv_pclass1, 20, density=True)
+
+plt.title("Pclass = 1 | Survived = 0")
+plt.xlabel("Age")
+plt.ylabel("Number Survived")
+
+age_nosurv_pclass1.hist(bins=20)
+plt.show()
+
+age_surv_pclass2 = relevant_data[relevant_data['Survived'] == 1]
+age_surv_pclass2 = age_surv_pclass2[age_surv_pclass2['Pclass'] == 2].get('Age')
+
+n, bins, patches = plt.hist(age_surv_pclass2, 20, density=True)
+
+plt.title("Pclass = 2 | Survived = 1")
+plt.xlabel("Age")
+plt.ylabel("Number Survived")
+
+age_surv_pclass2.hist(bins=20)
+plt.show()
+
+age_nosurv_pclass2 = relevant_data[relevant_data['Survived'] == 0]
+age_nosurv_pclass2 = age_nosurv_pclass2[age_nosurv_pclass2['Pclass'] == 2].get('Age')
+
+n, bins, patches = plt.hist(age_nosurv_pclass2, 20, density=True)
+
+plt.title("Pclass = 2 | Survived = 0")
+plt.xlabel("Age")
+plt.ylabel("Number Survived")
+
+age_nosurv_pclass2.hist(bins=20)
+plt.show()
+
+age_surv_pclass3 = relevant_data[relevant_data['Survived'] == 1]
+age_surv_pclass3 = age_surv_pclass3[age_surv_pclass3['Pclass'] == 3].get('Age')
+
+n, bins, patches = plt.hist(age_surv_pclass3, 20, density=True)
+
+plt.title("Pclass = 3 | Survived = 1")
+plt.xlabel("Age")
+plt.ylabel("Number Survived")
+
+age_surv_pclass3.hist(bins=20)
+plt.show()
+
+age_nosurv_pclass3 = relevant_data[relevant_data['Survived'] == 0]
+age_nosurv_pclass3 = age_nosurv_pclass3[age_nosurv_pclass3['Pclass'] == 3].get('Age')
+
+n, bins, patches = plt.hist(age_nosurv_pclass3, 20, density=True)
+
+plt.title("Pclass = 3 | Survived = 0")
+plt.xlabel("Age")
+plt.ylabel("Number Survived")
+
+age_nosurv_pclass3.hist(bins=20)
+plt.show()
+
+# Question 13
+print("\n~ Q13 ~")
+
+# Question 14
+print("\n~ Q14 ~")
+print("Drop Tickets from model?")
+
+ticket_col = list(all_data.get('Ticket'))
+ticket_count = Counter(ticket_col).most_common()
+print("Percent unique tickets: " + str(100 * len(ticket_count) / len(ticket_col)) + "%")
+
+# Question 15
+print("\n~ Q15 ~")
+print("How many nulls in Cabin?")
+
+cabin_col = all_data.get('Cabin')
+num_null_vals = cabin_col.isnull().sum()
+print(str(num_null_vals) + " null values in Cabin column out of " + str(len(list(cabin_col))) + ".")
+
+# Question 16
+print("\n~ Q16 ~")
+
+# Question 17
+print("\n~ Q17 ~")
+
+# Question 18 - Fill in missing embarked values
+print("\n~ Q18 ~")
+print("Filling in missing Embarked values")
+
+most_common_embark = Counter(train_df.get('Embarked')).most_common(1)[0][0]
+print(most_common_embark)
+
+train_df['Embarked'] = train_df['Embarked'].fillna(most_common_embark)
+
+# Question 19 - Fill in missing Fare value
+print("\n~ Q19 ~")
+print("Filling in missing Fare value")
+
+fare_col = list(test_df.get('Fare'))
+mode_fare_val = Counter(fare_col).most_common(1)[0][0]
+print(mode_fare_val)
+
+test_df['Fare'] = test_df['Fare'].fillna(mode_fare_val)
+
+# Question 20
+print("\n~ Q20 ~")
