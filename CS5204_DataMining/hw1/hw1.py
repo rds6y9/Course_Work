@@ -265,6 +265,11 @@ print(str(num_null_vals) + " null values in Cabin column out of " + str(len(list
 
 # Question 16
 print("\n~ Q16 ~")
+sex_col = all_data.get('Sex')
+sex_col = sex_col.replace('male', 0)
+sex_col = sex_col.replace('female', 1)
+
+all_data['Gender'] = sex_col
 
 # Question 17
 print("\n~ Q17 ~")
