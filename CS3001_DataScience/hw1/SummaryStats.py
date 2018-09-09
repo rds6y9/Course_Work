@@ -1,4 +1,4 @@
-import math, matplotlib, random, sys
+import math, random, sys
 from MergeSort import mergeSort
 
 def getMax(num_list):
@@ -87,16 +87,23 @@ def summaryStatistics(num_list):
     print("Median Value: " + str(median_value))
 
     # 25th percentile
-    percentile_value = getPercentile(num_list, 0.25)
-    print("25th Percentile: " + str(percentile_value))
+    percentile_value25 = getPercentile(num_list, 0.25)
+    print("25th Percentile: " + str(percentile_value25))
 
     # 75th percentile
-    percentile_value = getPercentile(num_list, 0.75)
-    print("75th Percentile: " + str(percentile_value))
+    percentile_value75 = getPercentile(num_list, 0.75)
+    print("75th Percentile: " + str(percentile_value75))
     
     print()
 
-    return num_list
+    # Ugly return, but it works
+    return [max_value, 
+            min_value, 
+            mean_value,
+            standard_deviation_value,
+            median_value,
+            percentile_value25,
+            percentile_value75]
 
 def generateResults():
     # Generate three sets of random data
@@ -108,6 +115,9 @@ def generateResults():
     ssA = summaryStatistics(listA)
     ssB = summaryStatistics(listB)
     ssC = summaryStatistics(listC)
+
+    # Again, ugly return. 
+    return [ssA, ssB, ssC]
 
 if __name__ == "__main__":
     generateResults()
