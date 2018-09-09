@@ -1,4 +1,4 @@
-import math, random, sys
+import math, matplotlib, random, sys
 from MergeSort import mergeSort
 
 def getMax(num_list):
@@ -98,7 +98,7 @@ def summaryStatistics(num_list):
 
     return num_list
 
-if __name__ == "__main__":
+def generateResults():
     # Generate three sets of random data
     listA = [random.randint(0, 9) for _ in range(1000)]
     listB = [random.gauss(5, 3) for _ in range(1000)]
@@ -108,3 +108,6 @@ if __name__ == "__main__":
     ssA = summaryStatistics(listA)
     ssB = summaryStatistics(listB)
     ssC = summaryStatistics(listC)
+
+if __name__ == "__main__":
+    generateResults()
