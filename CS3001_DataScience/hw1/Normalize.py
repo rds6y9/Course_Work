@@ -16,7 +16,7 @@ def countOccurences(num_list):
 
     return collections.OrderedDict(sorted(occurences.items()))
 
-if __name__ == "__main__":
+def generateNormalizedData():
     listA = [random.randint(0, 9) for _ in range(1000)]
     listB = [random.gauss(5, 3) for _ in range(1000)]
     listC = [math.exp(random.gauss(1, 0.5)) for _ in range(1000)]
@@ -25,9 +25,14 @@ if __name__ == "__main__":
     normalized_listB = normalize(listB)
     normalized_listC = normalize(listC)
 
-    print(normalize(listA))
-    print(countOccurences(normalized_listA))
-    print(normalize(listB))
-    print(countOccurences(normalized_listB))
-    print(normalize(listC))
-    print(countOccurences(normalized_listC))
+    return normalized_listA, normalized_listB, normalized_listC
+
+if __name__ == "__main__":
+    listA, listB, listC = generateNormalizedData()
+
+    print(listA)
+    print(countOccurences(listA))
+    print(listB)
+    print(countOccurences(listB))
+    print(listC)
+    print(countOccurences(listC))
