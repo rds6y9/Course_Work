@@ -1,7 +1,6 @@
 """
 NameScraper.py is a program written to scrape random summoner names from the na.op.gg website.
 The official Riot API does not expose an endpoint to get a random list of names.
-
 Result: A .txt file containing a random list of 10000 summoner names and associated ladder ranking.
 """
 
