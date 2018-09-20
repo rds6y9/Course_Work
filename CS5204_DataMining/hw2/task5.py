@@ -48,18 +48,50 @@ def Question1():
     tree.export_graphviz(model, out_file='q1_5ID3tree.dot', feature_names=features)
     call(["dot", "-Tpng", "q1_5ID3tree.dot", "-o", "q1_5ID3tree.png"])
 
-    predict = model.predict(test_dataset)
+    predict = list(model.predict(test_dataset))
     print(predict)
 
-    print(str(calculate_accuracy(test_results, predict)) + "% Accuracy")
+    accuracy_result = calculate_accuracy(test_results, predict)
+    precision_result = calculate_precision(test_results, predict)
+    recall_result = calculate_recall(test_results, predict)
+    print(str(accuracy_result) + "% Accuracy")
+    print(str(precision_result) + "% Precision")
+    print(str(recall_result) + "% Recall")
+    print(str(2 * ((precision_result * recall_result) / (precision_result + recall_result))) + " f1 score")
+    
 
 def calculate_accuracy(list_1, list_2):
     matches = 0
     for _ in range(len(list_1)):
         if list_1[_] == list_2[_]:
             matches += 1
-    
     return (matches / len(list_1)) * 100
+
+def calculate_precision(list_1, list_2):
+    matches = 0
+    for _ in range(len(list_1)):
+        if list_1[_] == list_2[_]:
+            matches += 1
+    
+    false_pos = 0
+    for _ in range(len(list_1)):
+        if list_1[_] == 'Lose' and list_2[_] == 'Win':
+            false_pos += 1
+    return (matches / (matches + false_pos)) * 100
+
+def calculate_recall(list_1, list_2):
+    matches = 0
+    for _ in range(len(list_1)):
+        if list_1[_] == list_2[_]:
+            matches += 1
+    
+    false_neg = 0
+    for _ in range(len(list_1)):
+        if list_1[_] == 'Win' and list_2[_] == 'Lose':
+            false_neg += 1
+    return (matches / (matches + false_neg)) * 100
+
+    
 
 if __name__ == "__main__":
     Question1()
