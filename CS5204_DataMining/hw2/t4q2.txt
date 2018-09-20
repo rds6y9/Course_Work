@@ -1,0 +1,15 @@
+Date,Outlook,Temperature,Humidity,Windy,Label: Play?
+9/1/17,Sunny,Hot,High,"False",No
+9/8/17,Sunny,Hot,High,"True",No
+9/15/17,Overcast,Hot,High,"False",Yes
+9/22/17,Rainy,Mild,High,"False",Yes
+9/29/17,Rainy,Cool,Normal,"False",Yes
+10/1/17,Rainy,Cool,Normal,"True",No
+10/8/17,Overcast,Cool,Normal,"True",Yes
+10/15/17,Sunny,Mild,High,"False",No
+10/22/17,Sunny,Cool,Normal,"False",Yes
+10/29/17,Rainy,Mild,Normal,"False",Yes
+11/1/17,Sunny,Mild,Normal,"True",Yes
+11/8/17,Overcast,Mild,High,"True",Yes
+11/15/17,Overcast,Hot,Normal,"False",Yes
+11/22/17,Rainy,Mild,High,"True",No
