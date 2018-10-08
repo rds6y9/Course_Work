@@ -10,6 +10,7 @@ All code was run in the Spyder IDE
 """
 
 from collections import Counter
+from random import randint
 
 import matplotlib.pyplot as plt
 import numpy
@@ -246,6 +247,7 @@ plt.show()
 
 # Question 13
 print("\n~ Q13 ~")
+print("Answered in the attached document")
 
 # Question 14
 print("\n~ Q14 ~")
@@ -274,8 +276,24 @@ sex_col = sex_col.replace('female', 1)
 all_data['Gender'] = sex_col
 print("\nColumn Before: \n\n" + str(sex_col))
 
-# Question 17
+# Question 17 - Fill in missing age values
 print("\n~ Q17 ~")
+print("Performing simple replacement of missing values based on mean +/- standard deviation")
+
+print("\n\nAge Column Before: \n" + str(all_data["Age"]))
+
+# Finding mean and sd of current values
+
+avgAge = all_data["Age"].mean()
+sdAge = all_data["Age"].std(ddof=1)
+
+# Replacing all NaNs
+
+for index, row in all_data.iterrows():
+    if row.isnull().Age:
+        all_data.loc[index, 'Age'] = randint(int(avgAge - sdAge), int(avgAge + sdAge))
+
+print("\n\nAge Column After: \n" + str(all_data["Age"]))
 
 # Question 18 - Fill in missing embarked values
 print("\n~ Q18 ~")
@@ -298,3 +316,17 @@ test_df['Fare'] = test_df['Fare'].fillna(mode_fare_val)
 
 # Question 20
 print("\n~ Q20 ~")
+print("\n\nFare Column Before: \n" + str(all_data["Fare"]))
+
+
+for index, row in all_data.iterrows():
+    if row.Fare <= 7.91:
+        all_data.loc[index, 'Fare'] = 0
+    elif row.Fare <=14.454:
+        all_data.loc[index, 'Fare'] = 1
+    elif row.Fare <=31.0:
+        all_data.loc[index, 'Fare'] = 2
+    else:
+        all_data.loc[index, 'Fare'] = 3
+
+print("\n\nFare Column After: \n" + str(all_data["Fare"]))
