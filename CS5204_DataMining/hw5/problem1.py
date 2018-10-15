@@ -120,11 +120,19 @@ def isValidNumberString(s):
 ######################################################################
 
 def distance(instance1, instance2, method='Euclidean'):
+    # Preliminary checking of inputs to ensure correctness
     if instance1 == None or instance2 == None:
         return float("inf")
-
+    # Checking for centroids and removing the index for the distance calculation
     print(instance1)
     print(instance2)
+    if len(instance1) == 3:
+        print("Found a centroid")
+        instance1 = instance1[1:]
+    if len(instance2) == 3:
+        print("Found a centroid")
+        instance2 = instance2[1:]
+
     if method == 'Euclidean':
         return dis.euclidean(instance1, instance2)
     elif method == 'Manhattan': 
@@ -376,5 +384,5 @@ def paintClusters2D(canvas, clusters, centroids, title=""):
 dataset = loadCSV("football.csv")
 print(dataset)
 # showDataset2D(dataset)
-clustering = kmeans(dataset, 2, initCentroids=[(4, 6), (5, 4)], dist_method='Manhattan')
+clustering = kmeans(dataset, 2, initCentroids=[(0, 4, 6), (1, 5, 4)], dist_method='Manhattan')
 printTable(clustering["centroids"])
