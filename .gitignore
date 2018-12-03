@@ -57,3 +57,9 @@ coverage.xml
 **/Practice/**
 
 VirtualEnv
+
+# jar files
+*.jar
+
+# CS3001/KungFu is a separate repo
+*/KungFu/*

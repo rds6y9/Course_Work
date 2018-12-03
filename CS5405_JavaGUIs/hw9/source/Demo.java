@@ -127,7 +127,7 @@ public class Demo extends Application{
             if (audioPlayer != null) {
                 audioPlayer.stop();
                 audioPlayer = new MediaPlayer(new Media(new File("audios/" + audioSelector.getValue()).toURI().toString()));
-                audioPlayer.play();
+                audioPlayber.play();
             }
         });
 
